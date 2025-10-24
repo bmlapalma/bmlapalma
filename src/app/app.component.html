@@ -1,0 +1,43 @@
+<!-- Main application template -->
+
+<!-- Fixed header -->
+<app-header></app-header>
+
+<!-- Hero section with background image and overlay -->
+<div class="hero d-flex flex-column justify-content-center align-items-center text-center">
+  <div class="overlay"></div>
+  <div class="content">
+    <h1 class="display-4 fw-bold text-light mb-3">Banda Municipal de Música <br>Nuestra Señora del Valle</h1>
+    <h2 class="text-light mb-4">La Palma del Condado (Huelva)</h2>
+    <button class="btn btn-primary btn-lg" (click)="scrollTo('gallery')">Ver Galería</button>
+  </div>
+</div>
+
+<!-- Gallery Section -->
+<section id="gallery" class="py-5">
+  <div class="container">
+    <h2 class="text-center mb-4">Galería</h2>
+    <app-gallery></app-gallery>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-5 bg-light">
+  <div class="container">
+    <h2 class="text-center mb-4">Contacto</h2>
+    <app-contact></app-contact>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="py-4">
+  <div class="container text-center">
+    <div class="social-links mb-2">
+      <a href="https://www.facebook.com/" target="_blank" class="mx-2"><i class="fab fa-facebook-f"></i></a>
+      <a href="https://www.instagram.com/" target="_blank" class="mx-2"><i class="fab fa-instagram"></i></a>
+      <a href="https://www.youtube.com/" target="_blank" class="mx-2"><i class="fab fa-youtube"></i></a>
+    </div>
+    <p class="mb-0">&copy; {{ currentYear }} Banda Municipal de Música Ntra. Sra. del Valle</p>
+    <p class="mb-0">La Palma del Condado (Huelva)</p>
+  </div>
+</footer>

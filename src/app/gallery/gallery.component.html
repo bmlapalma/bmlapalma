@@ -1,0 +1,8 @@
+<!-- Responsive gallery grid -->
+<div class="row g-3">
+  <div class="col-6 col-md-4 col-lg-3" *ngFor="let img of images">
+    <div class="gallery-item">
+      <img [src]="img.path" [alt]="img.alt || ''" class="img-fluid" />
+    </div>
+  </div>
+</div>

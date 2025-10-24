@@ -1,0 +1,25 @@
+<!-- Responsive navigation bar for the landing page -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+  <div class="container">
+    <a class="navbar-brand d-flex align-items-center" href="#">
+      <img src="assets/img/logo-white.png" alt="Logo" width="10" height="10" class="me-2">
+      <span>#SuenaElValle</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" (click)="scrollToSection('gallery')">Galería</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" (click)="scrollToSection('contact')">Contacto</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="https://bandamunicipal-lap.wixsite.com/bandalapalma">Acceso músicos</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

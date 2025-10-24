@@ -1,0 +1,33 @@
+/* Styles for the navigation bar */
+
+.navbar-brand img {
+  filter: drop-shadow(0 0 4px rgba(0, 0, 0, 0.5));
+}
+
+.nav-link {
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  color: var(--secondary-color) !important;
+}
+/* Aumento del tamaño del logotipo y sombreado suave */
+.navbar-brand img {
+  width: 120px;      // aumenta el tamaño del logo
+  height: auto;
+  filter: drop-shadow(0 0 2px rgba(0, 0, 0, 0.5));
+}
+
+/* Fondo semitransparente y desenfoque para el navbar */
+.custom-navbar {
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(5px);
+}
+
+.nav-link {
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  color: var(--secondary-color) !important;
+}
