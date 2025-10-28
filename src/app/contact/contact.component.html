@@ -1,9 +1,10 @@
 <!-- Contact form for visitors to send messages -->
+ <p style="color: darkred;"><b>Puedes ponerte en contacto con nosotros rellenando el siguiente formulario:</b></p>
 <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" novalidate>
   <!-- Name field -->
   <div class="mb-3">
-    <label for="name" class="form-label">Nombre</label>
-    <input id="name" type="text" class="form-control" formControlName="name" placeholder="Tu nombre" />
+    <label for="name" class="form-label"><b>Nombre</b></label>
+    <input id="name" type="text" class="form-control" formControlName="name" placeholder="Introduce tu nombre" />
     <div *ngIf="contactForm.get('name')?.invalid && contactForm.get('name')?.touched" class="text-danger">
       El nombre es obligatorio.
     </div>
@@ -11,8 +12,8 @@
 
   <!-- Email field -->
   <div class="mb-3">
-    <label for="email" class="form-label">Correo electrónico</label>
-    <input id="email" type="email" class="form-control" formControlName="email" placeholder="tucorreo@ejemplo.com" />
+    <label for="email" class="form-label"><b>Correo electrónico</b></label>
+    <input id="email" type="email" class="form-control" formControlName="email" placeholder="Introduce tu correo electrónico" />
     <div *ngIf="contactForm.get('email')?.invalid && contactForm.get('email')?.touched" class="text-danger">
       Introduce un correo válido.
     </div>
@@ -20,8 +21,8 @@
 
   <!-- Message field -->
   <div class="mb-3">
-    <label for="message" class="form-label">Mensaje</label>
-    <textarea id="message" rows="5" class="form-control" formControlName="message" placeholder="Tu mensaje"></textarea>
+    <label for="message" class="form-label"><b>Mensaje</b></label>
+    <textarea id="message" rows="5" class="form-control" formControlName="message" placeholder="Déjanos tu mensaje..."></textarea>
     <div *ngIf="contactForm.get('message')?.invalid && contactForm.get('message')?.touched" class="text-danger">
       El mensaje es obligatorio.
     </div>

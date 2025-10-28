@@ -1,8 +1,14 @@
-<!-- Responsive gallery grid -->
-<div class="row g-3">
-  <div class="col-6 col-md-4 col-lg-3" *ngFor="let img of images">
-    <div class="gallery-item">
-      <img [src]="img.path" [alt]="img.alt || ''" class="img-fluid" />
+<!-- gallery.component.html -->
+<ngb-carousel [interval]="4000" [pauseOnHover]="false" [wrap]="true">
+  <ng-template ngbSlide *ngFor="let img of images">
+    <img
+      [src]="img.path"
+      [alt]="img.alt"
+      class="d-block w-100"
+      style="object-fit: cover; max-height: 500px"
+    />
+    <div class="custom-caption d-none d-md-block">
+      <p>#SuenaElValle</p>
     </div>
-  </div>
-</div>
+  </ng-template>
+</ngb-carousel>

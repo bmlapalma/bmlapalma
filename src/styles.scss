@@ -6,13 +6,22 @@ $light-color: #f5f5f5;
 $dark-color: #000000;
 
 /* Exportamos las variables como CSS custom properties */
-:root {
+/* :root {
   --primary-color: #{$primary-color};
   --primary-color-dark: #{$primary-color-dark};
   --secondary-color: #{$secondary-color};
   --light-color: #{$light-color};
   --dark-color: #{$dark-color};
+}*/
+
+:root {
+  --primary-color: #7a0200;
+  --primary-color-dark: #600000; // tono más oscuro calculado en Sass
+  --secondary-color: #b56b00;
+  --light-color: #f5f5f5;
+  --dark-color: #000000;
 }
+
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -57,3 +66,34 @@ footer a {
 footer a:hover {
   color: var(--secondary-color);
 }
+
+/* Importing Bootstrap SCSS file. */
+@import 'bootstrap/scss/bootstrap';
+
+/* Botón primario: color corporativo */
+.btn-primary {
+  background-color: var(--primary-color);
+  border-color: var(--primary-color);
+  color: var(--light-color);
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  background-color: var(--primary-color-dark); // tono un poco más oscuro al pasar el ratón
+  border-color: var(--primary-color-dark);
+  color: var(--light-color);
+}
+
+/* Opcional: estilo para un botón secundario si lo usas */
+.btn-secondary {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+  color: var(--light-color);
+}
+
+.btn-secondary:hover,
+.btn-secondary:focus {
+  background-color: var(--secondary-color);
+  border-color: var(--secondary-color);
+}
+

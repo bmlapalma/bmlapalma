@@ -22,3 +22,32 @@
 .gallery-item:hover img {
   transform: scale(1.05);
 }
+
+/* Caja del caption con fondo y sombra */
+.custom-caption {
+  position: absolute;
+  bottom: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: rgba(0, 0, 0, 0.5); // semitransparente para que se lea bien
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(3px); // desenfoque suave opcional
+}
+
+/* Texto del hashtag */
+.custom-caption p {
+  margin: 0;
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--primary-color); // usa #b56b00 (naranja) del logo
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6); // para resaltar sobre imágenes claras
+}
+
+@media (max-width: 576px) {
+  .custom-caption p {
+    font-size: 1.2rem; // reduce tamaño en móviles
+  }
+}
