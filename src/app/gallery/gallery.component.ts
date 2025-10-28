@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 
 interface Image {
   path: string;
-  alt?: string;
+  alt: string;
 }
 
 @Component({
@@ -11,15 +11,18 @@ interface Image {
   styleUrls: ['./gallery.component.scss']
 })
 export class GalleryComponent {
-  /**
-   * Array of images to display in the gallery.
-   *
-   * Replace the paths with your own images located in `src/assets/img/gallery`.
-   */
+  // Lista estática de 5 imágenes numeradas
   images: Image[] = [
-    { path: 'assets/img/gallery/photo1.jpg', alt: 'Foto de actuación 1' },
-    { path: 'assets/img/gallery/photo2.jpg', alt: 'Foto de actuación 2' },
-    { path: 'assets/img/gallery/photo3.jpg', alt: 'Foto de actuación 3' }
-    // Añade más objetos con `path` y `alt` para mostrar más imágenes.
+    { path: 'assets/img/gallery/1.jpg', alt: 'Imagen 1' },
+    { path: 'assets/img/gallery/2.jpg', alt: 'Imagen 2' },
+    { path: 'assets/img/gallery/3.jpg', alt: 'Imagen 3' },
+    { path: 'assets/img/gallery/4.jpg', alt: 'Imagen 4' },
+    { path: 'assets/img/gallery/5.jpg', alt: 'Imagen 5' },
+    { path: 'assets/img/gallery/5.jpg', alt: 'Imagen 6' },
+    { path: 'assets/img/gallery/5.jpg', alt: 'Imagen 7' },
+    { path: 'assets/img/gallery/5.jpg', alt: 'Imagen 8' },
+    { path: 'assets/img/gallery/5.jpg', alt: 'Imagen 9' },
+    { path: 'assets/img/gallery/5.jpg', alt: 'Imagen 10' },
+
   ];
 }

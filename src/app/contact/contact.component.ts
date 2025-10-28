@@ -1,64 +1,59 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import emailjs from 'emailjs-com';
+import emailjs from '@emailjs/browser';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
-  styleUrls: ['./contact.component.scss']
+  styleUrls: ['./contact.component.scss'],
 })
-export class ContactComponent {
-  /**
-   * Reactive form model for the contact form.
-   */
+export class ContactComponent implements OnInit {
   contactForm: FormGroup;
-
-  /**
-   * Success and error messages shown after sending the form.
-   */
-  successMessage: string = '';
-  errorMessage: string = '';
+  successMessage = '';
+  errorMessage = '';
 
   constructor(private fb: FormBuilder) {
-    // Initialize the form with validation rules
     this.contactForm = this.fb.group({
       name: ['', Validators.required],
       email: ['', [Validators.required, Validators.email]],
-      message: ['', Validators.required]
+      message: ['', Validators.required],
     });
   }
 
-  /**
-   * Sends the form data via EmailJS when the form is submitted.
-   */
+  ngOnInit(): void {
+    // Inicializa EmailJS con tu public key
+    emailjs.init({ publicKey: 'H4Uk1kRmXyf3f-J2T' });
+  }
+
   onSubmit(): void {
     if (this.contactForm.invalid) {
-      // Do not submit if the form is invalid
       this.contactForm.markAllAsTouched();
       return;
     }
 
-    // TODO: replace these with your own EmailJS service, template and public key
     const serviceID = 'service_g7s6br3';
     const templateID = 'template_cg6l2lp';
-    const publicKey = 'H4Uk1kRmXyf3f-J2T';
 
     const templateParams = {
-      from_name: this.contactForm.value.name,
-      from_email: this.contactForm.value.email,
-      message: this.contactForm.value.message,
-      to_email: 'francaroalb@gmail.com'
+      name: this.contactForm.value.name,
+      email: this.contactForm.value.email,
+      mensaje: this.contactForm.value.message
     };
 
-    emailjs.send(serviceID, templateID, templateParams, publicKey)
-      .then(() => {
-        this.successMessage = 'Mensaje enviado correctamente. ¡Gracias por contactarnos!';
-        this.errorMessage = '';
-        this.contactForm.reset();
-      }, (err) => {
-        console.error('EmailJS error:', err);
-        this.errorMessage = 'Error al enviar el mensaje. Inténtalo de nuevo más tarde.';
-        this.successMessage = '';
-      });
+    emailjs.send(
+      'service_nknc0gh',              // tu Service ID
+      'template_gvwafq5',             // tu Template ID
+      templateParams,
+      { publicKey: 'WmdULePB4FpkMd8YV' }  // clave pública
+    ).then(() => {
+      this.successMessage = 'Mensaje enviado correctamente.';
+      this.errorMessage = '';
+      this.contactForm.reset();
+    }).catch((err) => {
+      console.error('EmailJS error:', err);
+      this.errorMessage = 'Error al enviar el mensaje. Inténtalo de nuevo más tarde.';
+      this.successMessage = '';
+    });
+
   }
 }
