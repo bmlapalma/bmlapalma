@@ -11,6 +11,8 @@ export class HeaderComponent {
    *
    * @param section Section identifier (id)
    */
+  isNavbarCollapsed = true;
+  
   scrollToSection(section: string): void {
     document.getElementById(section)?.scrollIntoView({ behavior: 'smooth' });
   }
